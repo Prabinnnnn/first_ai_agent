@@ -12,6 +12,9 @@ class Document(models.Model):
     created_at =models.DateTimeField(auto_now_add=True) #this will auto generate the timestamos when the document is created, it only sets the value once at creation
     updated_at = models.DateTimeField(auto_now=True) #auto update the timestamp everytime the model is saved
 
+    def __str__(self):
+        return f"<Document: {self.title}"
+
     def save(self, *args, **kwargs):
         if self.active and self.active_at is None:
             self.active_at = timezone.now()
