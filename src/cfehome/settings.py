@@ -124,7 +124,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-OPENAI_API_KEY = config("OPENAI_API_KEY", default=None)
+OPENAI_API_KEY = config("OPENAI_API_KEY", default=None) #it reads the openai api key from .env, if not found, returns None
+#config is the function of the python-decouple library that is used to read from the .env file 
 #we can also do OPENAI_API_KEY= os.environ.get("OPENAI_API_KEY", default= None)
-
-print(OPENAI_API_KEY)
+# using environ, no need to use decouple

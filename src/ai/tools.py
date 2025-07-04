@@ -1,14 +1,14 @@
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import  tool
 from documents.models import Document
-@tool(description="list all active documents.")
+@tool(description="list the most recent 5 documents for the current user.")
 def list_documents(config:RunnableConfig):
     #print(config)
-    metadata = config.get('metadata') or config.get('configurable')
-    user_id = metadata.get('user_id')
-    qs = Document.objects.filter(active=True)
+    configurable = config.get('configurable') or config.get('metadata')
+    user_id = configurable.get('user_id')
+    qs = Document.objects.filter(owner_id=user_id, active=True).order_by("-created_at")
     response_data=[]
-    for obj in qs:
+    for obj in qs[:5]:
         response_data.append(
             {
                 "id": obj.id,
@@ -18,8 +18,8 @@ def list_documents(config:RunnableConfig):
     return response_data
 @tool(description="get a document by id if its active'")
 def get_document(document_id:int, config:RunnableConfig):
-    metadata = config.get('metadata') or config.get('configurable')
-    user_id = metadata.get('user_id')
+    configurable = config.get('configurable') or config.get('metadata')
+    user_id = configurable.get('user_id')
     if user_id is None:
         raise Exception("invalid request for a user.")
     try:
@@ -34,3 +34,8 @@ def get_document(document_id:int, config:RunnableConfig):
         "title": obj.title
     }
     return response_data
+
+document_tools=[
+    list_documents,
+    get_document
+]
