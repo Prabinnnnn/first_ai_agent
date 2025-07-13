@@ -23,5 +23,4 @@ Key capabilities include:
 - **LangGraph workflows** to coordinate agent behavior  
 - **Dynamic tool execution** (e.g. fetching recent documents, querying models)  
 - **Permit-powered RBAC** for secure access control  
-- **Supervisor & multi-agent support**  
 - **Fully modular**: swap LLMs or tools as needed  
