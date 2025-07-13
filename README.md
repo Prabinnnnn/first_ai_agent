@@ -4,7 +4,8 @@
 
 - Integrates **Django ORM** for data storage  
 - Uses **LangGraph** to orchestrate agent workflows  
-- Leverages **Permit** for fine-grained RBAC (Role-Based Access Control)  
+- Leverages **Permit** for fine-grained RBAC (Role-Based Access Control)
+- Creates a Supervisor Agent that controls other agents
  
 
 
@@ -13,7 +14,8 @@ Key capabilities include:
 - Saving user data securely through Django  
 - Executing third-party API tools and custom logic  
 - Interacting with Django models via agent queries (no vector embeddings required)  
-- Easily switching between different LLM providers  
+- Easily switching between different LLM providers
+- Create a Supervisor Agent that controls other agents
  
 ---
 
