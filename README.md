@@ -6,7 +6,7 @@
 - Uses **LangGraph** to orchestrate agent workflows  
 - Leverages **Permit** for fine-grained RBAC (Role-Based Access Control)  
 - Can run multiple tools and even supervise other agents  
-  :contentReference[oaicite:2]{index=2}
+
 
 Key capabilities include:
 
@@ -14,7 +14,7 @@ Key capabilities include:
 - Executing third-party API tools and custom logic  
 - Interacting with Django models via agent queries (no vector embeddings required)  
 - Easily switching between different LLM providers  
-  :contentReference[oaicite:3]{index=3}  
+ 
 ---
 
 ## ⚙️ Features
