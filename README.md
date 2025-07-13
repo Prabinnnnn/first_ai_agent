@@ -25,4 +25,3 @@ Key capabilities include:
 - **Permit-powered RBAC** for secure access control  
 - **Supervisor & multi-agent support**  
 - **Fully modular**: swap LLMs or tools as needed  
-  :contentReference[oaicite:4]{index=4}
