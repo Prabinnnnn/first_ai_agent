@@ -5,7 +5,7 @@
 - Integrates **Django ORM** for data storage  
 - Uses **LangGraph** to orchestrate agent workflows  
 - Leverages **Permit** for fine-grained RBAC (Role-Based Access Control)  
-- Can run multiple tools and even supervise other agents  
+ 
 
 
 Key capabilities include:
